@@ -8,6 +8,8 @@ The intent is __not__ to create a fancy, cool, or post-modern color style, __nor
 
 Myrrh is currently in an __experimental stage__. Color choices and their contextual usage are still under real-world testing. Until version __v1.0__, expect adjustments and refinements without prior notice.
 
+> It could not be used as for now. I'm working to finish the highlight settings in few days.
+
 ---
 
 ### Naming

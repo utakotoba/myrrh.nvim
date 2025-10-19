@@ -135,8 +135,8 @@ function M.setup(tp, cfg)
     },
 
     -- Line indents (may need to work with some plugins)
-    IndentLine = { fg = tp.fg.muted },
-    IndentLineCurrent = { fg = tp.fg.secondary },
+    IndentLine = { fg = tp.bg.surface },
+    IndentLineCurrent = { fg = tp.bg.active },
 
     -- Status line at the bottom of the screen
     StatusLine = {

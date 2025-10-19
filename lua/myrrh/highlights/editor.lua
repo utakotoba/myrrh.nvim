@@ -39,6 +39,18 @@ function M.setup(tp, cfg)
     CursorLine = { bg = tp.bg.surface },
     CursorColumn = { link = 'CursorLine' },
 
+    -- Terminal
+    Terminal = {
+      fg = tp.fg.primary,
+      bg = not cfg.transparent and tp.bg.base or 'none',
+    },
+
+    -- Toolbar line at the bottom of the screen
+    ToolbarLine = {
+      fg = tp.fg.primary,
+      bg = not cfg.transparent and tp.bg.base or 'none',
+    },
+
     -- Character displayed at the end of buffer
     EndOfBuffer = { fg = tp.fg.muted },
 

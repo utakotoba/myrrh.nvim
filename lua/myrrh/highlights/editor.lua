@@ -15,7 +15,7 @@ function M.setup(tp, cfg)
 
     -- Default background and foreground for a non-current editor window
     NormalNC = {
-      fg = tp.fg.secondary,
+      fg = tp.fg.primary,
       -- use the same background color as normal
       bg = not cfg.transparent and tp.bg.base or 'NONE',
     },
@@ -90,6 +90,7 @@ function M.setup(tp, cfg)
     DiffDelete = {
       fg = tp.accent.bloom.base,
       bg = tp.accent.bloom.tint,
+      sp = tp.fg.muted,
       strikethrough = true,
     },
 

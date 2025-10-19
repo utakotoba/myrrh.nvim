@@ -112,7 +112,7 @@ function M.setup(rp)
       twilight = {
         base = rp.solace,
         alt = rp.epilogue,
-        tint = utils.darken_and_desaturate(rp.solace, 44, 24),
+        tint = utils.darken_and_desaturate(rp.solace, 46, 32),
       },
       immersion = {
         base = rp.still,

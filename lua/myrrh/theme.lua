@@ -48,7 +48,7 @@ function M.setup(rp, ap)
     bg = {
       dim = rp.nocturne,
       base = rp.nocturne,
-      surface = utils.lipghten(rp.nocturne, 8),
+      surface = utils.lighten(rp.nocturne, 8),
       layer = utils.lighten(rp.nocturne, 16),
       active = utils.lighten(rp.nocturne, 20),
       overlay = utils.lighten(rp.nocturne, 24),

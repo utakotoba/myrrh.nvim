@@ -29,7 +29,7 @@ M.raw = {
 
   --- @nodoc anchor
   --- @type Myrrh.HexColor
-  dune = '#E0B38A',
+  dune = '#E7B17B',
   --- @type Myrrh.HexColor
   leather = '#E9A364',
 

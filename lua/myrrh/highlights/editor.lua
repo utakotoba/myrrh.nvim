@@ -39,30 +39,16 @@ function M.setup(tp, cfg)
     CursorLine = { bg = tp.bg.surface },
     CursorColumn = { link = 'CursorLine' },
 
-    -- Sign column (line number, etc)
-    SignColumn = {
-      fg = tp.fg.primary,
-      bg = not cfg.transparent and tp.bg.surface or 'NONE',
-    },
-
-    -- Default line number
-    LineNr = { fg = tp.fg.muted, bg = 'NONE' },
-    LineNrAbove = { link = 'LineNr' },
-    LineNrBelow = { link = 'LineNr' },
-
-    -- Line number of the line cursor positioned
-    CursorLineNr = { fg = tp.fg.primary, bg = 'NONE' },
-
     -- Terminal
     Terminal = {
       fg = tp.fg.primary,
-      bg = not cfg.transparent and tp.bg.surface or 'none',
+      bg = not cfg.transparent and tp.bg.surface or 'NONE',
     },
 
     -- Toolbar line at the bottom of the screen
     ToolbarLine = {
       fg = tp.fg.primary,
-      bg = not cfg.transparent and tp.bg.surface or 'none',
+      bg = not cfg.transparent and tp.bg.surface or 'NONE',
     },
 
     -- Character displayed at the end of buffer
@@ -128,40 +114,17 @@ function M.setup(tp, cfg)
       underdotted = cfg.undertext,
     },
 
-    -- Diagnostics / LSP -----------------------------------------------------
-    DiagnosticError = { fg = tp.stateful.error },
-    DiagnosticWarn = { fg = tp.stateful.warning },
-    DiagnosticInfo = { fg = tp.stateful.info },
-    DiagnosticHint = { fg = tp.stateful.hint },
-    DiagnosticOk = { fg = tp.stateful.success },
-
-    DiagnosticUnderlineError = {
-      undercurl = true,
-      sp = tp.stateful.error,
-    },
-    DiagnosticUnderlineWarn = {
-      undercurl = true,
-      sp = tp.stateful.warning,
-    },
-    DiagnosticUnderlineInfo = {
-      undercurl = true,
-      sp = tp.stateful.info,
-    },
-    DiagnosticUnderlineHint = {
-      undercurl = true,
-      sp = tp.stateful.hint,
-    },
-
-    LspReferenceText = { bg = tp.bg.active },
-    LspReferenceRead = { link = 'LspReferenceText' },
-    LspReferenceWrite = { bg = tp.bg.active, underline = true },
-    LspSignatureActiveParameter = { fg = tp.stateful.warning },
-    LspCodeLens = { fg = tp.fg.muted },
-
     -- Line Numbers / Signs / Fold / Status ----------------------------------
-    SignColumn = { fg = tp.fg.secondary, bg = tp.bg.layer },
-    LineNr = { fg = tp.fg.muted, bg = tp.bg.layer },
-    CursorLineNr = { fg = tp.stateful.warning, bg = tp.bg.layer, bold = true },
+
+    -- Buffer side columns
+    SignColumn = {
+      fg = tp.fg.secondary,
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
+    LineNr = { fg = tp.fg.muted, bg = 'NONE' },
+    CursorLineNr = { fg = tp.fg.primary, bg = 'NONE', bold = true },
+
+    -- Folded columns
     FoldColumn = { fg = tp.fg.muted, bg = tp.bg.layer },
     Folded = { fg = tp.fg.secondary, bg = tp.bg.surface },
 

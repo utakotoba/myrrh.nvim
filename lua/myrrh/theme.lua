@@ -72,8 +72,8 @@ function M.setup(rp)
     },
     fg = {
       primary = rp.remnant,
-      secondary = utils.darken(rp.remnant, 16),
-      muted = utils.darken(rp.remnant, 32),
+      secondary = utils.darken_and_desaturate(rp.remnant, 16, 8),
+      muted = utils.darken_and_desaturate(rp.remnant, 32, 16),
       inverse = utils.lighten(rp.nocturne, 36),
     },
     stateful = {

@@ -57,28 +57,28 @@ function M.setup(tp, cfg)
     Exception = { fg = tp.accent.bloom.alt },
 
     -- Any pre-proccessor (parent group, fallback used)
-    PreProc = { fg = tp.accent.growth.base, italic = cfg.italic },
+    PreProc = { fg = tp.accent.growth.base },
 
     -- Include pre-proccessor
-    Include = { fg = tp.accent.growth.base, italic = cfg.italic },
+    Include = { fg = tp.accent.growth.base },
 
     -- Define pre-proccessor
-    Define = { fg = tp.accent.growth.base, italic = cfg.italic },
+    Define = { fg = tp.accent.growth.base },
 
     -- Macro
-    Macro = { fg = tp.accent.twilight.base, underline = cfg.undertext },
+    Macro = { fg = tp.accent.twilight.base },
 
     -- PreCondit
-    PreCondit = { fg = tp.accent.immersion.base },
+    PreCondit = { fg = tp.accent.growth.base },
 
     -- Any tupe (parent group)
     Type = { fg = tp.accent.twilight.base, italic = cfg.italic },
 
     -- Storage attributes
-    StorageClass = { fg = tp.accent.vista.base, underdashed = cfg.undertext },
+    StorageClass = { fg = tp.accent.twilight.base, underdashed = cfg.undertext },
 
     -- Structure
-    Structure = { fg = tp.accent.twilight.base, italic = cfg.italic },
+    Structure = { fg = tp.accent.anchor.base, italic = cfg.italic },
 
     -- Typedef (itself)
     TypeDef = { fg = tp.accent.bloom.base },

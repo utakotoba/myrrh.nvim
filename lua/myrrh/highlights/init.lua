@@ -1,7 +1,10 @@
 local M = {}
 
+-- use code local table instead of filesystem lookup,
+-- to speed up loading time and keep safe.
 local highlight_setting_list = {
-  'editor',
+  'editor', -- basic editor visuals
+  'code', -- syntax highlights, including built-in syntax and tree-sitter
 }
 
 --- Apply highlights to current neovim session

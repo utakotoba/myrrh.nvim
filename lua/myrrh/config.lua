@@ -24,10 +24,18 @@ local M = {}
 --- @field remnant? string
 
 --- @class Myrrh.Config
+--- @field undertext? boolean Enable under* in highlighting
+--- @field italic? boolean Enable italic text in highlighting
+--- @field transparent? boolean Enable transparency
 --- @field raw_palette_override? Myrrh.Config.PartialRawPalette
 
 --- @type Myrrh.Config
-M.defaults = {}
+M.defaults = {
+  undertext = false,
+  italic = false,
+  transparent = false,
+  raw_palette_override = {},
+}
 
 --- @type Myrrh.Config
 M.cfg = nil

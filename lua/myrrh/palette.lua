@@ -113,14 +113,14 @@ end
 
 --- Setup colorset, used to override Myrrh colors.
 --- @param cfg Myrrh.Config
---- @return Myrrh.Palette.Raw
+--- @return Myrrh.Palette.Raw, Myrrh.Palette.ANSI
 function M.setup(cfg)
   if cfg.raw_palette_override and next(cfg.raw_palette_override) ~= nil then
     --- @type Myrrh.Palette.Raw
     M.raw = vim.tbl_extend('force', M.raw, cfg.raw_palette_override)
   end
 
-  return M.raw
+  return M.raw, M.get_ansi_palette(M.raw)
 end
 
 return M

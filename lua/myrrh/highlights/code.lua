@@ -8,7 +8,7 @@ function M.setup(tp, cfg)
     -- Built-in Syntax -------------------------------------------------------
 
     -- Any code comment
-    Comment = { fg = tp.fg.muted, italic = cfg.italic },
+    Comment = { fg = tp.fg.secondary, italic = cfg.italic },
 
     -- Any constant (parent group, fallback used)
     Constant = { fg = tp.accent.vista.base },

@@ -57,6 +57,7 @@ function M.setup(tp, cfg)
       fg = tp.accent.twilight.base,
       bg = tp.accent.twilight.tint,
       bold = true,
+      underline = cfg.undertext,
     },
 
     -- Incremental search highlight
@@ -68,7 +69,7 @@ function M.setup(tp, cfg)
     },
 
     -- Non-current matches when searching
-    Search = { fg = tp.accent.balance.base, bg = tp.accent.balance.tint },
+    Search = { fg = tp.accent.vista.base, bg = tp.accent.vista.tint },
 
     -- Matching parenthesis to the one under the cursor
     MatchParen = { fg = tp.accent.anchor.base, bold = true },

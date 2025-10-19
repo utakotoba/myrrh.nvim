@@ -52,10 +52,10 @@ function M.setup(tp, cfg)
     },
 
     -- Character displayed at the end of buffer
-    EndOfBuffer = { fg = tp.fg.muted },
+    EndOfBuffer = { fg = tp.bg.surface },
 
     -- Characters that are not part of the file's text
-    NonText = { fg = tp.fg.muted },
+    NonText = { fg = tp.bg.surface },
 
     -- Cursor / Search / Match ----------------------------------------------
 
@@ -125,21 +125,45 @@ function M.setup(tp, cfg)
     CursorLineNr = { fg = tp.fg.primary, bg = 'NONE', bold = true },
 
     -- Folded columns
-    FoldColumn = { fg = tp.fg.muted, bg = tp.bg.layer },
-    Folded = { fg = tp.fg.secondary, bg = tp.bg.surface },
+    FoldColumn = {
+      fg = tp.fg.muted,
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
+    Folded = {
+      fg = tp.fg.secondary,
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
 
-    StatusLine = { fg = tp.fg.secondary, bg = tp.bg.layer },
-    StatusLineNC = { fg = tp.fg.muted, bg = tp.bg.layer },
-    WinSeparator = { fg = tp.bg.overlay, bg = tp.bg.layer },
+    -- Status line at the bottom of the screen
+    StatusLine = {
+      fg = tp.fg.secondary,
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
+    StatusLineNC = {
+      fg = tp.fg.muted,
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
+
+    -- Separator
+    WinSeparator = { fg = tp.fg.muted, bg = 'NONE' },
     VertSplit = { link = 'WinSeparator' },
 
     -- Tabs / WinBar ---------------------------------------------------------
-    TabLine = { fg = tp.fg.secondary, bg = tp.bg.layer },
-    TabLineSel = { fg = tp.fg.primary, bg = tp.bg.active, bold = true },
-    TabLineFill = { bg = tp.bg.dim },
 
+    -- Tabline visuals
+    TabLine = { fg = tp.accent.growth.base, bg = tp.accent.growth.tint },
+    TabLineSel = {
+      fg = tp.accent.growth.alt,
+      bg = tp.accent.growth.tint,
+      bold = true,
+    },
+    TabLineFill = {
+      bg = not cfg.transparent and tp.bg.surface or 'NONE',
+    },
+
+    -- Window bar visuals
     WinBar = { fg = tp.fg.secondary, bg = 'NONE' },
-    WinBarNC = { fg = tp.fg.muted, bg = tp.bg.dim },
+    WinBarNC = { fg = tp.fg.muted, bg = 'NONE' },
 
     -- Popups / Menus --------------------------------------------------------
     Pmenu = { fg = tp.fg.secondary, bg = tp.bg.surface },

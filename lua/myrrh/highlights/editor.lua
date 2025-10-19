@@ -69,7 +69,11 @@ function M.setup(tp, cfg)
     },
 
     -- Non-current matches when searching
-    Search = { fg = tp.accent.vista.base, bg = tp.accent.vista.tint },
+    Search = {
+      fg = tp.accent.growth.base,
+      bg = tp.accent.growth.tint,
+      underdotted = cfg.undertext,
+    },
 
     -- Matching parenthesis to the one under the cursor
     MatchParen = { fg = tp.accent.anchor.base, bold = true },

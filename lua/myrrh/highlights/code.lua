@@ -72,7 +72,7 @@ function M.setup(tp, cfg)
     PreCondit = { fg = tp.accent.growth.base },
 
     -- Any tupe (parent group)
-    Type = { fg = tp.accent.twilight.base, italic = cfg.italic },
+    Type = { fg = tp.accent.anchor.base, italic = cfg.italic },
 
     -- Storage attributes
     StorageClass = { fg = tp.accent.twilight.base, underdashed = cfg.undertext },

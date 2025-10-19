@@ -39,16 +39,30 @@ function M.setup(tp, cfg)
     CursorLine = { bg = tp.bg.surface },
     CursorColumn = { link = 'CursorLine' },
 
+    -- Sign column (line number, etc)
+    SignColumn = {
+      fg = tp.fg.primary,
+      bg = not cfg.transparent and tp.bg.surface or 'NONE',
+    },
+
+    -- Default line number
+    LineNr = { fg = tp.fg.muted, bg = 'NONE' },
+    LineNrAbove = { link = 'LineNr' },
+    LineNrBelow = { link = 'LineNr' },
+
+    -- Line number of the line cursor positioned
+    CursorLineNr = { fg = tp.fg.primary, bg = 'NONE' },
+
     -- Terminal
     Terminal = {
       fg = tp.fg.primary,
-      bg = not cfg.transparent and tp.bg.base or 'none',
+      bg = not cfg.transparent and tp.bg.surface or 'none',
     },
 
     -- Toolbar line at the bottom of the screen
     ToolbarLine = {
       fg = tp.fg.primary,
-      bg = not cfg.transparent and tp.bg.base or 'none',
+      bg = not cfg.transparent and tp.bg.surface or 'none',
     },
 
     -- Character displayed at the end of buffer

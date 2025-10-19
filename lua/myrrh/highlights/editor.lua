@@ -79,17 +79,27 @@ function M.setup(tp, cfg)
     MatchParen = { fg = tp.accent.anchor.base, bold = true },
 
     -- Diff / VCS ------------------------------------------------------------
-    DiffAdd = { bg = tp.stateful.success },
-    DiffChange = { bg = tp.stateful.warning },
-    DiffDelete = { fg = tp.stateful.error, bg = tp.bg.surface },
-    DiffText = { bg = tp.stateful.info },
 
-    diffAdded = { fg = tp.stateful.success },
-    diffRemoved = { fg = tp.stateful.error },
-    diffDeleted = { fg = tp.stateful.error },
-    diffChanged = { fg = tp.stateful.warning },
-    diffOldFile = { fg = tp.stateful.error },
-    diffNewFile = { fg = tp.stateful.success },
+    -- Added lines in diff mode
+    DiffAdd = { fg = tp.accent.growth.base, bg = tp.accent.growth.tint },
+
+    -- Changed lines in diff mode
+    DiffChange = { fg = tp.accent.twilight.base, bg = tp.accent.twilight.tint },
+
+    -- Deleted lines in diff mode
+    DiffDelete = {
+      fg = tp.accent.bloom.base,
+      bg = tp.accent.bloom.tint,
+      strikethrough = true,
+    },
+
+    -- Changed text within a changed line in diff mode
+    DiffText = {
+      fg = tp.accent.twilight.alt,
+      bg = tp.accent.twilight.tint,
+      bold = true,
+      underdotted = cfg.undertext,
+    },
 
     -- Diagnostics / LSP -----------------------------------------------------
     DiagnosticError = { fg = tp.stateful.error },

@@ -11,7 +11,7 @@ M.setup = config.setup
 --- Load colorscheme based on current configs
 function M.load()
   local rp, ap = palette.setup(config.cfg)
-  local tp = theme.setup(rp, ap)
+  local tp = theme.setup(rp)
   local hl = highlights.setup(tp, config.cfg)
 
   -- load colorscheme

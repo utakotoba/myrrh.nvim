@@ -8,8 +8,7 @@ local M = {}
 --- @field bg Myrrh.Theme.Background Background color tokens
 --- @field fg Myrrh.Theme.Foreground Foreground color tokens
 --- @field stateful Myrrh.Theme.Stateful Stateful color tokens
---- @field raw Myrrh.Palette.Raw
---- @field ansi Myrrh.Palette.ANSI
+--- @field accent Myrrh.Theme.Accent Accent color tokens
 
 --- Background Color Tokens
 ---
@@ -38,11 +37,29 @@ local M = {}
 --- @field info Myrrh.HexColor Info state accent color
 --- @field hint Myrrh.HexColor Hint state accent color
 
+--- Accent Color Tokens
+---
+--- @class Myrrh.Theme.Accent
+--- @field balance Myrrh.Theme.AccentUnit
+--- @field bloom Myrrh.Theme.AccentUnit
+--- @field growth Myrrh.Theme.AccentUnit
+--- @field anchor Myrrh.Theme.AccentUnit
+--- @field vista Myrrh.Theme.AccentUnit
+--- @field twilight Myrrh.Theme.AccentUnit
+--- @field immersion Myrrh.Theme.AccentUnit
+--- @field whisper Myrrh.Theme.AccentUnit
+
+--- Accent Color Unit
+---
+--- @class Myrrh.Theme.AccentUnit
+--- @field base Myrrh.HexColor
+--- @field alt Myrrh.HexColor
+--- @field tint Myrrh.HexColor
+
 --- Helper function setup theme colors
 --- @param rp Myrrh.Palette.Raw
---- @param ap Myrrh.Palette.ANSI
 --- @return Myrrh.Theme
-function M.setup(rp, ap)
+function M.setup(rp)
   --- @type Myrrh.Theme
   local resolved = {
     bg = {
@@ -66,8 +83,48 @@ function M.setup(rp, ap)
       info = rp.stanza,
       hint = rp.solace,
     },
-    raw = rp,
-    ansi = ap,
+    accent = {
+      balance = {
+        base = rp.stanza,
+        alt = rp.lull,
+        tint = utils.darken_and_desaturate(rp.stanza, 44, 4),
+      },
+      bloom = {
+        base = rp.petal,
+        alt = rp.ardor,
+        tint = utils.darken_and_desaturate(rp.petal, 44, 24),
+      },
+      growth = {
+        base = rp.sprout,
+        alt = rp.grove,
+        tint = utils.darken_and_desaturate(rp.sprout, 48, 16),
+      },
+      anchor = {
+        base = rp.dune,
+        alt = rp.leather,
+        tint = utils.darken_and_desaturate(rp.dune, 46, 16),
+      },
+      vista = {
+        base = rp.mirage,
+        alt = rp.zenith,
+        tint = utils.darken_and_desaturate(rp.mirage, 46, 24),
+      },
+      twilight = {
+        base = rp.solace,
+        alt = rp.epilogue,
+        tint = utils.darken_and_desaturate(rp.solace, 44, 24),
+      },
+      immersion = {
+        base = rp.still,
+        alt = rp.refuge,
+        tint = utils.darken_and_desaturate(rp.still, 46, 20),
+      },
+      whisper = {
+        base = rp.linen,
+        alt = rp.halo,
+        tint = utils.darken_and_desaturate(rp.linen, 56, 8),
+      },
+    },
   }
 
   return resolved

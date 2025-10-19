@@ -6,31 +6,72 @@ function M.setup(tp, cfg)
   --- @type table<string, vim.api.keyset.highlight>
   local hls = {
     -- Core UI ---------------------------------------------------------------
+
+    -- Default background and foreground for the main editor window
     Normal = {
       fg = tp.fg.primary,
       bg = not cfg.transparent and tp.bg.base or 'NONE',
     },
-    NormalNC = { fg = tp.fg.secondary, bg = tp.bg.dim },
-    NormalFloat = { fg = tp.fg.primary, bg = tp.bg.layer },
-    FloatBorder = { fg = tp.fg.muted, bg = tp.bg.layer },
-    FloatTitle = { fg = tp.fg.secondary, bg = tp.bg.layer, bold = true },
-    FloatFooter = { fg = tp.fg.muted, bg = tp.bg.layer },
 
-    ColorColumn = { bg = tp.bg.surface },
+    -- Default background and foreground for a non-current editor window
+    NormalNC = {
+      fg = tp.fg.secondary,
+      -- use the same background color as normal
+      bg = not cfg.transparent and tp.bg.base or 'NONE',
+    },
+
+    -- Background and foreground for normal text in floating windows
+    NormalFloat = { fg = tp.fg.primary, bg = tp.bg.surface },
+
+    -- Border around floating windows
+    FloatBorder = { fg = tp.fg.muted, bg = tp.bg.surface },
+
+    -- Title text in floating windows
+    FloatTitle = { fg = tp.fg.secondary, bg = tp.bg.surface, bold = true },
+
+    -- Footer text in floating windows
+    FloatFooter = { fg = tp.fg.muted, bg = tp.bg.surface },
+
+    -- Column color to the right of set width
+    ColorColumn = { bg = tp.bg.base },
+
+    -- Entire line where the cursor is currently positioned
     CursorLine = { bg = tp.bg.surface },
     CursorColumn = { link = 'CursorLine' },
-    EndOfBuffer = { fg = tp.bg.base },
+
+    -- Character displayed at the end of buffer
+    EndOfBuffer = { fg = tp.fg.muted },
+
+    -- Characters that are not part of the file's text
     NonText = { fg = tp.fg.muted },
 
     -- Cursor / Search / Match ----------------------------------------------
-    Cursor = { fg = tp.bg.base, bg = tp.fg.primary },
+
+    -- The cursor in the normal editor window
+    Cursor = { fg = 'NONE', bg = 'NONE', reverse = true },
     lCursor = { link = 'Cursor' },
     CursorIM = { link = 'Cursor' },
 
-    CurSearch = { fg = tp.fg.inverse, bg = tp.stateful.hint, bold = true },
-    IncSearch = { fg = tp.fg.inverse, bg = tp.stateful.warning, bold = true },
-    Search = { fg = tp.fg.inverse, bg = tp.stateful.info },
-    MatchParen = { fg = tp.stateful.warning, bold = true },
+    -- Current search result item
+    CurSearch = {
+      fg = tp.accent.twilight.base,
+      bg = tp.accent.twilight.tint,
+      bold = true,
+    },
+
+    -- Incremental search highlight
+    IncSearch = {
+      fg = tp.accent.anchor.base,
+      bg = tp.accent.anchor.tint,
+      bold = true,
+      underdotted = cfg.undertext,
+    },
+
+    -- Non-current matches when searching
+    Search = { fg = tp.accent.balance.base, bg = tp.accent.balance.tint },
+
+    -- Matching parenthesis to the one under the cursor
+    MatchParen = { fg = tp.accent.anchor.base, bold = true },
 
     -- Diff / VCS ------------------------------------------------------------
     DiffAdd = { bg = tp.stateful.success },

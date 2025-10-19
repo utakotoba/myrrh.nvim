@@ -2,8 +2,6 @@ local M = {}
 
 local highlight_setting_list = {
   'editor',
-  'syntax',
-  'treesitter',
 }
 
 --- Apply highlights to current neovim session

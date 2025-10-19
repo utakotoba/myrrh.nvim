@@ -319,6 +319,24 @@ function color_utils.desaturate(hex, amount)
   return hsluv_to_hex(hsl)
 end
 
+--- Darkens and desaturates a hex color together
+--- @param hex string Hex color string
+--- @param darken_amount number Amount to darken 0-100
+--- @param desaturate_amount number Amount to desaturate 0-100
+--- @return string Darkened hex color
+function color_utils.darken_and_desaturate(
+  hex,
+  darken_amount,
+  desaturate_amount
+)
+  local hsl = hex_to_hsluv(hex)
+  --- @diagnostic disable-next-line: assign-type-mismatch
+  hsl[3] = max(0, hsl[3] - darken_amount)
+  --- @diagnostic disable-next-line: assign-type-mismatch
+  hsl[2] = max(0, hsl[2] - desaturate_amount)
+  return hsluv_to_hex(hsl)
+end
+
 --- Blends two hex colors together
 --- @param hex_1 string First hex color
 --- @param hex_2 string Second hex color

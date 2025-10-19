@@ -11,45 +11,45 @@ local M = {}
 M.raw = {
   --- @nodoc balance
   --- @type Myrrh.HexColor
-  stanza = '#748176',
+  stanza = '#879389',
   --- @type Myrrh.HexColor
-  lull = '#97a99a',
+  lull = '#B3BDB5',
 
   --- @nodoc bloom
   --- @type Myrrh.HexColor
-  petal = '#e07e7f',
+  petal = '#E37F80',
   --- @type Myrrh.HexColor
-  ardor = '#eb6067',
+  ardor = '#EC6765',
 
   --- @nodoc growth
   --- @type Myrrh.HexColor
-  sprout = '#96bc86',
+  sprout = '#9BC28B',
   --- @type Myrrh.HexColor
-  grove = '#8fb76a',
+  grove = '#95C481',
 
   --- @nodoc anchor
   --- @type Myrrh.HexColor
-  dune = '#e0b38a',
+  dune = '#E0B38A',
   --- @type Myrrh.HexColor
-  leather = '#e79d64',
+  leather = '#E9A364',
 
   --- @nodoc vista
   --- @type Myrrh.HexColor
-  mirage = '#7cb8b9',
+  mirage = '#75B9BA',
   --- @type Myrrh.HexColor
-  zenith = '#62a4cb',
+  zenith = '#62A4CB',
 
   --- @nodoc twilight
   --- @type Myrrh.HexColor
-  solace = '#ac9ac3',
+  solace = '#B7A3D2',
   --- @type Myrrh.HexColor
-  epilogue = '#a589d3',
+  epilogue = '#C29CF2',
 
   --- @nodoc immersion
   --- @type Myrrh.HexColor
-  still = '#79bf9a',
+  still = '#79BF9A',
   --- @type Myrrh.HexColor
-  refuge = '#4bb088',
+  refuge = '#4BB088',
 
   --- @nodoc whisper
   --- @type Myrrh.HexColor

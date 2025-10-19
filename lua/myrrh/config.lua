@@ -38,7 +38,7 @@ M.defaults = {
 }
 
 --- @type Myrrh.Config
-M.cfg = nil
+M.cfg = {}
 
 --- Helper function to setup Myrrh colorscheme
 --- @param cfg Myrrh.Config

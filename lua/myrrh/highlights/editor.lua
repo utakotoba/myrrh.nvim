@@ -108,7 +108,7 @@ function M.setup(tp, cfg)
 
     -- Changed text within a changed line in diff mode
     DiffText = {
-      fg = tp.accent.twilight.alt,
+      fg = tp.accent.twilight.base,
       bg = tp.accent.twilight.tint,
       bold = true,
       underdotted = cfg.undertext,
@@ -122,7 +122,11 @@ function M.setup(tp, cfg)
       bg = not cfg.transparent and tp.bg.base or 'NONE',
     },
     LineNr = { fg = tp.fg.muted, bg = 'NONE' },
-    CursorLineNr = { fg = tp.fg.primary, bg = 'NONE', bold = true },
+    CursorLineNr = {
+      fg = tp.fg.primary,
+      bg = 'NONE',
+      bold = false,
+    },
 
     -- Folded columns
     FoldColumn = {

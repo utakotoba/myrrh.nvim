@@ -13,7 +13,7 @@ M.raw = {
   --- @type Myrrh.HexColor
   stanza = '#879389',
   --- @type Myrrh.HexColor
-  lull = '#B3BDB5',
+  lull = '#A6AFA8',
 
   --- @nodoc bloom
   --- @type Myrrh.HexColor
@@ -41,9 +41,9 @@ M.raw = {
 
   --- @nodoc twilight
   --- @type Myrrh.HexColor
-  solace = '#B7A3D2',
+  solace = '#D59BB8',
   --- @type Myrrh.HexColor
-  epilogue = '#C29CF2',
+  epilogue = '#EB8CBD',
 
   --- @nodoc immersion
   --- @type Myrrh.HexColor
@@ -53,15 +53,15 @@ M.raw = {
 
   --- @nodoc whisper
   --- @type Myrrh.HexColor
-  linen = '#eae9d9',
+  linen = '#EAE9D9',
   --- @type Myrrh.HexColor
-  halo = '#faf9eb',
+  halo = '#FAF9EB',
 
   --- @nodoc duality
   --- @type Myrrh.HexColor
-  nocturne = '#1c1f21',
+  nocturne = '#1C1F20',
   --- @type Myrrh.HexColor
-  remnant = '#d0c4ab',
+  remnant = '#D0C4AB',
 }
 
 --- Myrrh ANSI 16 Color

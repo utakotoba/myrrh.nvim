@@ -92,7 +92,7 @@ function M.setup(rp)
       bloom = {
         base = rp.petal,
         alt = rp.ardor,
-        tint = utils.darken_and_desaturate(rp.petal, 44, 24),
+        tint = utils.darken_and_desaturate(rp.petal, 44, 32),
       },
       growth = {
         base = rp.sprout,
@@ -102,7 +102,7 @@ function M.setup(rp)
       anchor = {
         base = rp.dune,
         alt = rp.leather,
-        tint = utils.darken_and_desaturate(rp.dune, 46, 16),
+        tint = utils.darken_and_desaturate(rp.dune, 48, 24),
       },
       vista = {
         base = rp.mirage,

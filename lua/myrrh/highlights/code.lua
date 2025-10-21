@@ -11,10 +11,10 @@ function M.setup(tp, cfg)
     Comment = { fg = tp.accent.balance.base, italic = cfg.italic },
 
     -- Any constant (parent group, fallback used)
-    Constant = { fg = tp.accent.vista.base },
+    Constant = { fg = tp.accent.immersion.base },
 
     -- String constant literal
-    String = { fg = tp.accent.growth.base, underdashed = cfg.undertext },
+    String = { fg = tp.accent.immersion.base },
 
     -- Character constant literal
     Character = { fg = tp.accent.growth.base, bold = true },
@@ -33,7 +33,7 @@ function M.setup(tp, cfg)
     Identifier = { fg = tp.accent.vista.base, underline = cfg.undertext },
 
     -- Any function name
-    Function = { fg = tp.accent.immersion.base, italic = cfg.italic },
+    Function = { fg = tp.accent.growth.base, italic = cfg.italic },
 
     -- Any statement (parent group, fallback used)
     Statement = { fg = tp.accent.bloom.base },
@@ -75,7 +75,10 @@ function M.setup(tp, cfg)
     Type = { fg = tp.accent.anchor.base, italic = cfg.italic },
 
     -- Storage attributes
-    StorageClass = { fg = tp.accent.twilight.base, underdashed = cfg.undertext },
+    StorageClass = {
+      fg = tp.accent.twilight.base,
+      underdashed = cfg.undertext,
+    },
 
     -- Structure
     Structure = { fg = tp.accent.anchor.base, italic = cfg.italic },
@@ -87,7 +90,10 @@ function M.setup(tp, cfg)
     Special = { fg = tp.accent.twilight.base },
 
     -- Special character in constants
-    SpecialChar = { fg = tp.accent.anchor.alt, underline = cfg.undertext },
+    SpecialChar = {
+      fg = tp.accent.anchor.alt,
+      underline = cfg.undertext,
+    },
 
     -- Tag element
     Tag = { fg = tp.accent.anchor.base, italic = cfg.italic },
@@ -112,6 +118,182 @@ function M.setup(tp, cfg)
 
     -- Todo
     Todo = { link = 'SpecialComment' },
+
+    -- Tree-sitter -------------------------------------------------
+
+    -- Comments
+    ['@comment'] = { link = 'Comment' },
+    ['@comment.documentation'] = {
+      fg = tp.accent.balance.alt,
+      italic = cfg.italic,
+    },
+    ['@comment.warning'] = {
+      fg = tp.accent.anchor.base,
+      bg = tp.accent.anchor.tint,
+      bold = true,
+      italic = cfg.italic,
+    },
+    ['@comment.error'] = {
+      fg = tp.accent.bloom.base,
+      bg = tp.accent.bloom.tint,
+      bold = true,
+      italic = cfg.italic,
+    },
+    ['@comment.note'] = {
+      fg = tp.accent.growth.base,
+      bg = tp.accent.growth.tint,
+      italic = cfg.italic,
+    },
+    ['@comment.todo'] = {
+      fg = tp.accent.vista.base,
+      bg = tp.accent.vista.tint,
+      bold = true,
+      italic = cfg.italic,
+    },
+
+    -- Constants
+    ['@constant'] = { link = 'Constant' },
+    ['@constant.macro'] = {
+      fg = tp.accent.growth.base,
+      italic = cfg.italic,
+    },
+    ['@constant.builtin'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+
+    -- Strings & Characters
+    ['@string'] = { link = 'String' },
+    ['@string.documentation'] = { link = '@comment.documentation' },
+    ['@string.regex'] = {
+      fg = tp.accent.immersion.base,
+      underdotted = cfg.undertext,
+    },
+    ['@string.escape'] = {
+      fg = tp.accent.anchor.base,
+      bg = tp.accent.anchor.tint,
+      underline = cfg.undertext,
+    },
+    ['@string.special'] = { fg = tp.accent.twilight.base },
+    ['@string.special.symbol'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+    ['@string.special.url'] = {
+      fg = tp.accent.vista.base,
+      italic = cfg.italic,
+    },
+    ['@string.special.path'] = {
+      fg = tp.accent.immersion.base,
+      underline = cfg.undertext,
+    },
+    ['@character'] = { fg = tp.accent.growth.base, bold = true },
+    ['@character.special'] = { fg = tp.accent.twilight.base, bold = true },
+
+    -- Numbers
+    ['@number'] = { fg = tp.accent.twilight.base },
+    ['@number.float'] = { link = '@number' },
+
+    -- Booleans
+    ['@boolean'] = { fg = tp.accent.bloom.base },
+
+    -- Variables
+    ['@variable'] = { fg = tp.fg.primary, underline = cfg.undertext },
+    ['@variable.builtin'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+    ['@variable.parameter'] = {
+      fg = tp.fg.primary,
+      underdotted = cfg.undertext,
+    },
+    ['@variable.parameter.builtin'] = { fg = tp.fg.secondary },
+    ['@variable.member'] = {
+      fg = tp.accent.vista.base,
+      underline = false,
+    },
+
+    -- Functions
+    ['@function'] = { fg = tp.accent.growth.base },
+    ['@function.builin'] = {
+      fg = tp.accent.growth.base,
+      italic = cfg.italic,
+    },
+    ['@function.call'] = {
+      fg = tp.accent.growth.base,
+      italic = cfg.italic,
+    },
+    ['@function.macro'] = { fg = tp.accent.immersion.base },
+    ['@function.method'] = { fg = tp.accent.growth.base },
+    ['@function.method.call'] = {
+      fg = tp.accent.growth.base,
+      italic = cfg.italic,
+    },
+    ['@constructor'] = { fg = tp.accent.twilight.base },
+
+    -- Keywords
+    ['@keyword'] = { link = 'Keyword' },
+    ['@keyword.coroutine'] = {
+      fg = tp.accent.bloom.base,
+      italic = cfg.italic,
+    },
+    ['@keyword.function'] = { link = 'Keyword' },
+    ['@keyword.operator'] = {
+      fg = tp.accent.bloom.base,
+      italic = cfg.italic,
+      underdotted = cfg.undertext,
+    },
+    ['@keyword.import'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+    ['@keyword.exception'] = { fg = tp.accent.bloom.alt },
+
+    -- Operators
+    ['@operator'] = { fg = tp.accent.anchor.base },
+    ['@opeartor.type'] = { fg = tp.accent.bloom.base },
+
+    -- Punctuation
+    ['@punctuation.delimiter'] = { fg = tp.fg.secondary },
+    ['@punctuation.bracket'] = { fg = tp.fg.primary },
+    ['@punctuation.special'] = { link = '@punctuation.bracket' },
+
+    -- Type
+    ['@type'] = {
+      fg = tp.accent.anchor.base,
+      italic = cfg.italic,
+      underdotted = cfg.undertext,
+    },
+    ['@type.builtin'] = { fg = tp.accent.anchor.base },
+    ['@type.definition'] = {
+      fg = tp.accent.anchor.base,
+      underdotted = cfg.undertext,
+    },
+    ['@type.qualifier'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+
+    -- Attributes
+    ['@attribute'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+      underdotted = cfg.undertext,
+    },
+    ['@attribute.builtin'] = {
+      fg = tp.accent.twilight.base,
+      italic = cfg.italic,
+    },
+
+    -- Properties
+    ['@property'] = { fg = tp.accent.vista.base },
+
+    -- Label
+    ['@label'] = { fg = tp.accent.immersion.base },
+
+    -- Modules
+    ['@module'] = { fg = tp.fg.secondary },
+    ['@module'] = { link = '@module' },
   }
 
   return hls

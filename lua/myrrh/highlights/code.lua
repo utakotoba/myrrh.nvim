@@ -30,7 +30,7 @@ function M.setup(tp, cfg)
 
     -- Any identifier / variable name, built-in syntax could not tell the
     -- differences between identifier (variables, parameters, etc.)
-    Identifier = { fg = tp.accent.vista.base, underline = cfg.undertext },
+    Identifier = { fg = tp.accent.vista.base },
 
     -- Any function name
     Function = { fg = tp.accent.growth.base, italic = cfg.italic },
@@ -198,7 +198,7 @@ function M.setup(tp, cfg)
     ['@boolean'] = { fg = tp.accent.bloom.base },
 
     -- Variables
-    ['@variable'] = { fg = tp.fg.primary, underline = cfg.undertext },
+    ['@variable'] = { fg = tp.fg.primary },
     ['@variable.builtin'] = {
       fg = tp.accent.twilight.base,
       italic = cfg.italic,
@@ -241,10 +241,9 @@ function M.setup(tp, cfg)
     ['@keyword.operator'] = {
       fg = tp.accent.bloom.base,
       italic = cfg.italic,
-      underdotted = cfg.undertext,
     },
     ['@keyword.import'] = {
-      fg = tp.accent.twilight.base,
+      fg = tp.accent.bloom.base,
       italic = cfg.italic,
     },
     ['@keyword.exception'] = { fg = tp.accent.bloom.alt },
@@ -294,6 +293,70 @@ function M.setup(tp, cfg)
     -- Modules
     ['@module'] = { fg = tp.fg.secondary },
     ['@module'] = { link = '@module' },
+
+    -- Markups
+    ['@markup.strong'] = { bold = true },
+    ['@markup.emphasis'] = { italic = true },
+    ['@markup.underline'] = { underline = true },
+    ['@markup.strikethrough'] = { strikethrough = true },
+    ['@markup.heading'] = { fg = tp.accent.immersion.base },
+    ['@markup.heading.1'] = {
+      fg = tp.accent.immersion.base,
+      bg = tp.accent.immersion.tint,
+      bold = true,
+    },
+    ['@markup.heading.2'] = {
+      fg = tp.accent.immersion.base,
+      bg = tp.accent.immersion.tint,
+      bold = true,
+    },
+    ['@markup.heading.3'] = {
+      fg = tp.accent.immersion.base,
+      bg = tp.accent.immersion.tint,
+      bold = true,
+    },
+    ['@markup.heading.4'] = {
+      fg = tp.accent.immersion.base,
+      bg = tp.accent.immersion.tint,
+    },
+    ['@markup.heading.5'] = {
+      fg = tp.accent.immersion.base,
+    },
+    ['@markup.heading.6'] = {
+      fg = tp.accent.immersion.base,
+    },
+    ['@markup.quote'] = { fg = tp.fg.secondary },
+    ['@markup.math'] = { fg = tp.accent.twilight.base },
+    ['@markup.environment'] = { fg = tp.accent.twilight.base },
+    ['@markup.link'] = { fg = tp.fg.primary },
+    ['@markup.link.label'] = { fg = tp.accent.anchor.base },
+    ['@markup.link.url'] = { fg = tp.accent.vista.base },
+    ['@markup.raw'] = { fg = tp.accent.growth.base },
+    ['@markup.raw.block'] = { fg = tp.accent.growth.base },
+    ['@markup.list'] = { fg = tp.fg.primary },
+    ['@markup.list.checked'] = { fg = tp.fg.primary },
+    ['@markup.list.unchecked'] = {
+      fg = tp.fg.muted,
+      strikethrough = true,
+    },
+
+    -- Tags
+    ['@tag'] = { fg = tp.accent.bloom.base },
+    ['@tag.builtin'] = { fg = tp.accent.bloom.base },
+    ['@tag.attribute'] = {
+      fg = tp.accent.growth.base,
+      italic = cfg.italic,
+    },
+    ['@tag.delimiter'] = { fg = tp.fg.secondary },
+
+    -- Special
+    ['@none'] = { fg = tp.fg.primary },
+    ['@conceal'] = { fg = tp.fg.muted },
+
+    -- Diff
+    ['@diff.plus'] = { link = 'DiffAdd' },
+    ['@diff.minus'] = { link = 'DiffDelete' },
+    ['@diff.delta'] = { link = 'DiffChange' },
   }
 
   return hls
